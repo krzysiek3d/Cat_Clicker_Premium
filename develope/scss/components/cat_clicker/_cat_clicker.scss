@@ -1,4 +1,7 @@
 $grey_dark: #333;
+$green: #1bfa1b;
+$greenyellow: #adff2f;
+$red: #e02d2d;
 $white: #fff;
 body {
 	margin: 0;
@@ -9,6 +12,16 @@ body {
 	color: $grey_dark;
 }
 
+%button {
+	border: solid transparent 1px;
+	display: inline-block;
+	cursor: pointer;
+	outline: none;
+	* {
+		pointer-events: none;
+	}
+}
+
 .cat-clicker {
 	position: absolute;
 	top: 0;
@@ -17,6 +30,15 @@ body {
 	height: 100%;
 	overflow: hidden;
 	background-color: $grey;
+	@include element('admin-button') {
+		margin: 10px 0;
+		@include modifier('is-active') {
+			background-color: $red;
+		}
+		@extend %button;
+		width: 150px;
+		background-color: $green;
+	}
 }
 
 .cat-list {
@@ -50,4 +72,31 @@ body {
 	}
 	@include element ('image') {}
 	@include element ('click-counter') {}
+}
+
+.admin-view {
+	padding: 15px;
+	width: 250px;
+	height: auto;
+	background-color: $greenyellow;
+	@include modifier('is-hidden') {
+		display: none;
+	}
+	@include element('input') {
+		padding: 5px;
+	}
+	@include element('save') {
+		@extend %button;
+		width: 80px;
+		height: 20px;
+		margin: 10px;
+		background-color: $green;
+	}
+	@include element('cancel') {
+		@extend %button;
+		width: 100px;
+		height: 20px;
+		margin: 10px;
+		background-color: $red;
+	}
 }
