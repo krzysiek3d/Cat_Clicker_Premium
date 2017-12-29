@@ -104,7 +104,7 @@
 				incrementCatClicks();
 			}
 
-			function incrementCatClicks(target) {
+			function incrementCatClicks() {
 				octopus.incrementClicks();
 				catDisplayView.render();
 			}
