@@ -30,6 +30,7 @@ body {
 
 .cat-list__item {
   padding: 15px;
+  cursor: pointer;
 }
 
 .display-cat {

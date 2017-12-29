@@ -30,6 +30,7 @@ body {
 	background-color: $white;
 	@include element ('item') {
 		padding: 15px;
+		cursor: pointer;
 	}
 }
 
